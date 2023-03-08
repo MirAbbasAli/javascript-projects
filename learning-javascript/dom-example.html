@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM example</title>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <p>Choose you favourite: </p>
+            <input type="checkbox" name="fav" id="html" value="html">
+            <label for="scales">html</label>
+            <input type="checkbox" name="fav" id="js" value="js">
+            <label for="scales">js</label>
+        </div>
+        <div>
+            <p>Choose you gender: </p>
+            <input type="radio" name="male" id="male" value="male" onclick="display(event)">
+            <label for="huey">Male</label>
+            <input type="radio" name="female" id="female" value="female">
+            <label for="huey">Female</label>
+        </div>
+        <button onclick="check()">Submit</button>
+        <div id="nameValue"></div>
+        <div id="checkedValue"></div>
+        <div id="radioValue"></div>
+        <div style="border:1px solid;padding:10px" onclick="div1Click(event)">
+            Div1
+            <div style="border:1px solid;padding:10px" onclick="div2Click(event)">
+                Div2
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function check(){
+            // name
+            name=document.getElementById("name").value;
+            document.getElementById("nameValue").innerHTML="Name: "+name;
+
+            // checkbox
+            html=document.getElementById("html").checked;
+            js=document.getElementById("js").checked;
+
+            if(html && js){
+                document.getElementById("checkedValue").innerHTML="You checked both html and js";
+            }
+            else if(html){
+                document.getElementById("checkedValue").innerHTML="You checked html";
+            }
+            else if(js){
+                document.getElementById("checkedValue").innerHTML="You checked js";
+            }
+            else {
+                document.getElementById("checkedValue").innerHTML="You checked none";
+            }
+
+            // radio button
+            male=document.getElementById("male").checked;
+            female=document.getElementById("female").checked;
+
+            if(male){
+                document.getElementById("radioValue").innerHTML="Gender: Male";
+            } else if(female){
+                document.getElementById("radioValue").innerHTML="Gender: Female";
+            }
+        }
+        function display(e){
+            console.log(e.target.name);
+            console.log(e.target.value);
+        }
+        function div1Click(e){
+            console.log("Div1 is clicked")
+        }
+        function div2Click(e){
+            console.log("Div2 is clicked")
+        }
+    </script>
+</body>
+</html>
