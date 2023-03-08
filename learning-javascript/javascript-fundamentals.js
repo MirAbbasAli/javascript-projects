@@ -1,4 +1,4 @@
-/*
+// /*
 function functionName(param1, param2){
     //statements
 }
@@ -464,10 +464,41 @@ const reduced_func = (v1, v2) => {
 let reducedArr2=arr2.reduce(reduced_func);
 console.log(reducedArr2); // 14
 
-*/
+
 
 // DOM API
 
 window.alert("Hello");
 
 alert("Hello");
+
+
+
+// Asynchronous Javascrip
+function display(){
+    console.log("Let's go to Trip");
+};
+
+console.log("Before");
+// Execute a function after specific time delay
+setTimeout(display, 3000);
+console.log("After");
+// Before
+// After
+// Let's go to Trip
+
+
+
+// AJAX
+// 1. Create a request object
+var xhr=new XMLHttpRequest();
+// 2. Open the URL
+url="http://www.google.com"
+xhr.open('GET', url);
+// 3. Mention code to run when respones is received
+xhr.onload=function(){
+    console.log("The response from server is "+xhr.responseText);
+};
+// 4. Send the request
+xhr.send();
+// */
