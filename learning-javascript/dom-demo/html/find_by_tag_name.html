@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Element By Tag Name</title>
+</head>
+<body>
+    <h2>Javascript HTML DOM</h2>
+    <div id="main">
+        <p>Finding HTML elements by Tag Name</p>
+        <p>This example demonstrates the <b> getElementByTagName</b></p>
+    </div>
+    <p id="demo"></p>
+    <script>
+        const main=document.getElementById("main");
+        const elements=main.getElementsByTagName("p");
+        document.getElementById("demo").innerHTML='The first paragraph (index 0) inside "main" is: '+elements[0].innerHTML;
+    </script>
+</body>
+</html>
