@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2>Javascript Validation</h2>
+    <form name="myForm" onsubmit="validateForm()">
+        <label for="fname">Name: </label>
+        <input type="text" name="fname" id="fname">
+        <input type="submit" value="Submit">
+    </form>
+    <p id="demo"></p>
+    <script>
+        function validateForm(){
+            let x=document.forms["myForm"]["fname"].value;
+            if(x==""){
+                alert("Name must be filled out");
+                return false;
+            }
+            else{
+                const toWrite=document.getElementById("demo");
+                toWrite.innerHTML="The Name is "+x;
+            }
+        }
+    </script>
+</body>
+</html>
