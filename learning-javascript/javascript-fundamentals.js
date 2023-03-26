@@ -501,4 +501,4 @@ xhr.onload=function(){
 };
 // 4. Send the request
 xhr.send();
-// */
+// 

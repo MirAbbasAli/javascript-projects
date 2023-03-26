@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create HTML element demo</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">This is a paragraph</p>
+        <p id="p2">This is another paragraph</p>
+    </div>
+    <script>
+        const paragraph=document.createElement("p");
+        const node=document.createTextNode("This is a new paragraph");
+        paragraph.appendChild(node);
+
+        const parent=document.getElementById("div1");
+        parent.appendChild(paragraph);
+
+        // insert Before p2
+        const child=document.getElementById("p2");
+        parent.insertBefore(paragraph, child);
+
+        // remove
+        const element=document.getElementById("p1");
+        element.remove();
+    </script>
+</body>
+</html>
